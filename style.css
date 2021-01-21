@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#timer-1 {
+  background-image: url(https://cdn.hipwallpaper.com/i/36/47/ZTHQbd.jpg);
+  /* background: #222; */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
+  color: rgb(222, 9, 225);
+  font-size: 4rem;
+}
+
+.label {
+  font-size: 1.5rem;
+  padding-left: 0.25rem;
+  padding-right: 0.8rem;
+}
+
+.value {
+  font-size: 3rem;
+}

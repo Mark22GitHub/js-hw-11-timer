@@ -236,7 +236,7 @@ this.day = document.querySelector( `${selector} [data-value="days"]`);
 this.hour = document.querySelector(`${selector} [data-value="hours"]`);
 this.min = document.querySelector(`${selector} [data-value="mins"]`);
 this.sec = document.querySelector(`${selector} [data-value="secs"]`);
-    this.p = document.querySelector(`${selector} p`);
+    // this.p = document.querySelector(`${selector} p`);
       
     this.reversedTimer();
         }
@@ -286,7 +286,7 @@ const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
     clearInterval(this.reversedTimer);
      this.updateClockFace(0);
     // alert('Your time has already been EXPIRED');
-      this.p.textContent = 'Your time has already been EXPIRED';
+      // this.p.textContent = 'Your time has already been EXPIRED';
   }
   }
       
@@ -299,7 +299,7 @@ const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
 
   const t = new CountdownTimer({
   selector: '#timer-1',
-  targetDate: new Date('Jul 17, 2020'),
+  targetDate: new Date('Jan 01, 2022'),
 });
 
 console.log(t);
