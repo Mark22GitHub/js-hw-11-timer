@@ -15,7 +15,14 @@ this.reversedTimer();
   findDifference() {
     const currentDate = new Date().getTime();
     const time = this.targetDate - currentDate;
-    time > 0 ? this.updateClockFace(time) : this.expiredDate(time);
+    // time > 0 ? this.updateClockFace(time) : this.expiredDate(time);
+
+    if (time > 0) {
+      this.updateClockFace(time)
+    } else {
+      clearInterval(this.reversedTimer);
+      this.updateClockFace(0);
+    }
   }
   
   reversedTimer() {
@@ -26,34 +33,38 @@ this.reversedTimer();
     };
         
     updateClockFace(time) {
-const days = pad(Math.floor(time / (1000 * 60 * 60 * 24))) ;
-const hours = pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));  
-const mins = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));  
-const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
+const days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24))) ;
+const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));  
+const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));  
+const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
 
   this.day.textContent = `${days}`;
   this.hour.textContent = `${hours}`;
   this.min.textContent = `${mins}`;
   this.sec.textContent = `${secs}`;
 
-  function pad(value) {
-    return String(value).padStart(2, '0');
-        } 
+      this.pad();
+      
     }
   
-    expiredDate(time) {
-    if (time < 0) {
-    clearInterval(this.reversedTimer);
-     this.updateClockFace(0);
-  }
-  }
+  pad(value) {
+    return String(value).padStart(2, '0');
+        } 
+  
+  
+  //   expiredDate(time) {
+  //   if (time < 0) {
+  //   clearInterval(this.reversedTimer);
+  //    this.updateClockFace(0);
+  // }
+  // }
         
 } 
 
 
   new CountdownTimer({
   selector: '#timer-1',
-  targetDate: new Date('Jan 01, 2022'),
+  targetDate: new Date('APR 22, 2021'),
 });
 
 // ===================
